@@ -15,8 +15,11 @@ logger = logging.getLogger("uvicorn.error")
 logger.setLevel(logging.DEBUG)
 
 PROMPT="""
-Read this pdf carefully.
+This is a privacy policy PDF. Read it carefully.
+You have to process the data in structured format.
 Extract information and all important data policy points.
+Provide at least 10 points and max 20 points.
+If something is not specified, Write "Not Specified" and provide your own assumption with declaration that it is based on AI's understanding.
 Arrange them in a serialized JSON without formatting.
 Schema should be like this:
 
@@ -27,7 +30,8 @@ Schema should be like this:
             "dataCollected": "",
             "purpose": "",
             "retentionPeriod": "",
-            "criticality": ""
+            "securityMeasures": "",
+            "optOutOptions": ""
         }
     ]
 }

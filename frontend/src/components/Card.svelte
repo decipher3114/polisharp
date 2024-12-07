@@ -83,19 +83,21 @@
 				<div class="font-semibold text-xl p-4">
 					Analyze {responseJson.response.companyName != '' ? responseJson.response.companyName: ''} Privacy Policy
 				</div>
-				<div class="overflow-auto w-full h-96 border border-gray-300 flex flex-col">
-					<div class="grid grid-cols-[minmax(300px,_3fr)_minmax(250px,_2fr)_minmax(250px,_2fr)_minmax(150px,_1fr)] sticky z-10">
+				<div class="overflow-auto w-11/12 h-96 border border-gray-300 flex flex-col">
+					<div class="grid grid-cols-[minmax(300px,_3fr)_minmax(200px,_2fr)_minmax(200px,_2fr)_minmax(200px,_2fr)_minmax(300px,_3fr)]">
 							<div class="px-4 py-2 font-bold border bg-[#141416]">Data Collected</div>
 							<div class="px-4 py-2 font-bold border bg-[#141416]">Purpose</div>
 							<div class="px-4 py-2 font-bold border bg-[#141416]">Retention Period</div>
-							<div class="px-4 py-2 font-bold border bg-[#141416]">Criticality</div>
+							<div class="px-4 py-2 font-bold border bg-[#141416]">Security Measures</div>
+							<div class="px-4 py-2 font-bold border bg-[#141416]">Opt-out Options</div>
 					</div>
 					{#each responseJson.response.dataPolicyPoints as policy}
-							<div class="grid grid-cols-[minmax(300px,_3fr)_minmax(250px,_2fr)_minmax(250px,_2fr)_minmax(150px,_1fr)]">
+							<div class="grid grid-cols-[minmax(300px,_3fr)_minmax(200px,_2fr)_minmax(200px,_2fr)_minmax(200px,_2fr)_minmax(300px,_3fr)]">
 									<div class="px-4 py-2 border">{policy.dataCollected}</div>
 									<div class="px-4 py-2 border">{policy.purpose}</div>
 									<div class="px-4 py-2 border">{policy.retentionPeriod}</div>
-									<div class="px-4 py-2 border">{policy.criticality}</div>
+									<div class="px-4 py-2 border">{policy.securityMeasures}</div>
+									<div class="px-4 py-2 border">{policy.optOutOptions}</div>
 							</div>
 					{/each}
 				</div>
